@@ -99,7 +99,9 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
           >
             {/* Desktop */}
             <Box my="6" display={['none', 'none', 'none', 'block']}>
-              <ScrollSpy offsetTop={88}>{links}</ScrollSpy>
+              <ScrollSpy offsetTop={88} duration={1500}>
+                {links}
+              </ScrollSpy>
             </Box>
 
             <Switch
@@ -128,7 +130,9 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
               <DrawerCloseButton />
               <DrawerBody>
                 <Flex flexDir="column" align="center" mt="20">
-                  <ScrollSpy>{links}</ScrollSpy>
+                  <ScrollSpy offsetTop={88} duration={1500}>
+                    {links}
+                  </ScrollSpy>
                 </Flex>
               </DrawerBody>
             </DrawerContent>
