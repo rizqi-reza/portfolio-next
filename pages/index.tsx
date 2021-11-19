@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import { Navbar, MainBanner, About, Education, Skills, Experience } from 'components';
+import { Navbar, MainBanner, About, Education, Skills, Experience, Projects } from 'components';
 
 import { IPage } from '@interfaces/ipages';
 
@@ -21,6 +21,7 @@ const MainPage: NextPage<IPage> = ({ title, description, navigationMenus, sectio
       <Education {...sections?.[2]} />
       <Skills {...sections?.[3]} />
       <Experience {...sections?.[4]} />
+      <Projects {...sections?.[5]} />
 
       {/* <main className={styles.main}>
         <h1 className={styles.title}>

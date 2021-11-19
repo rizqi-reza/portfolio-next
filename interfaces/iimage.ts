@@ -3,5 +3,6 @@ export interface IImage {
   url: string;
   webpUrl: string;
   title: string;
+  subTitle: string;
   imageAlt: string;
 }

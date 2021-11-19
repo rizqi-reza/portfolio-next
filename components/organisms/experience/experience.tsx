@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { ISection, ISubSection } from '@interfaces/isection';
-import { Container, Divider, Text, VStack, Flex } from '@chakra-ui/react';
+import { Divider, Text, VStack, Flex } from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/react';
 import { IoEllipse } from 'react-icons/io5';
 
-import { Title } from 'components';
+import { Section } from 'components';
 
 import { useColor } from '@utils/color';
 
@@ -51,13 +51,9 @@ export const ExperienceComponent: FC<ISection> = ({ name, title, subSections }) 
   };
 
   return (
-    <section id={name} key={name} className="education">
-      <Title title={title} />
-      <Container maxW="container.xl" pt={16} pb={16}>
-        {subSections?.map((item: ISubSection, index: number) => getExperience(item, index))}
-      </Container>
-      <Divider />
-    </section>
+    <Section id={name} title={title}>
+      {subSections?.map((item: ISubSection, index: number) => getExperience(item, index))}
+    </Section>
   );
 };
 

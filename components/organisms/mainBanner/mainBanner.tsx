@@ -5,7 +5,13 @@ import Image from 'next/image';
 import { ISection } from '@interfaces/isection';
 import { isSupportWebp } from '@utils/webp';
 
-export const MainBannerComponent: FC<ISection> = ({ name, description, image }) => {
+export const MainBannerComponent: FC<ISection> = ({
+  name,
+  title,
+  description,
+  image,
+  mainLink,
+}) => {
   const sourceImage = image?.[0];
   const bannerImage = sourceImage ? (isSupportWebp() ? sourceImage.webpUrl : sourceImage.url) : '';
 
@@ -45,7 +51,7 @@ export const MainBannerComponent: FC<ISection> = ({ name, description, image }) 
           >
             <span>HI, I AM</span>
             <br />
-            <span>RIZQI REZA</span>
+            <span>{title.toUpperCase()}</span>
             <br />
             <Badge
               variant="subtle"
@@ -57,7 +63,16 @@ export const MainBannerComponent: FC<ISection> = ({ name, description, image }) 
               {description.toUpperCase()}
             </Badge>
           </Heading>
-          <Button variant="solid" size="md" colorScheme="teal" mt="24" zIndex="overlay">
+          <Button
+            as="a"
+            href={mainLink}
+            target="_blank"
+            variant="solid"
+            size="md"
+            colorScheme="teal"
+            mt="24"
+            zIndex="overlay"
+          >
             Download Resume
           </Button>
         </Flex>
