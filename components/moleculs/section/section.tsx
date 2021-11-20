@@ -7,17 +7,24 @@ export interface IProps {
   id: string;
   title: string;
   background?: string;
+  isFullHeight?: boolean;
   children: JSX.Element | JSX.Element[];
 }
 
-export const SectionComponent: FC<IProps> = ({ id, title, background = 'white', children }) => (
+export const SectionComponent: FC<IProps> = ({
+  id,
+  title,
+  background = 'white',
+  isFullHeight = true,
+  children,
+}) => (
   <section id={id} key={id}>
     <Title title={title} />
     <Container
       maxW="container.xl"
       pt={16}
       pb={16}
-      sx={{ minHeight: 'calc(100vh - 188px)' }}
+      sx={{ minHeight: isFullHeight && 'calc(100vh - 188px)' }}
       colorScheme={background}
     >
       {children}

@@ -18,7 +18,7 @@ export const SkillsComponent: FC<ISection> = ({ name, title, subSections }) => {
             borderWidth="1px"
             borderRadius="md"
             overflow="hidden"
-            shadow="sm"
+            shadow="md"
             textAlign="center"
             p="4"
           >

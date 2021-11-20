@@ -3,7 +3,6 @@ import { ISection } from '@interfaces/isection';
 import {
   Box,
   Divider,
-  Flex,
   Heading,
   SimpleGrid,
   Text,
@@ -43,7 +42,7 @@ export const AboutComponent: FC<ISection> = ({
           </Heading>
           <Text lineHeight={1.8}>{description}</Text>
           <Divider mt="8" mb="8" />
-          <Flex justifyContent="space-between">
+          <Stack justifyContent="space-between" direction="row">
             {subSections?.map((sub) => (
               <Stack key={sub.title} textAlign="left">
                 <Heading as="h4" size="sm">
@@ -54,7 +53,7 @@ export const AboutComponent: FC<ISection> = ({
                 </Text>
               </Stack>
             ))}
-          </Flex>
+          </Stack>
         </Box>
         <HStack bg={primaryColor}>
           <Image
@@ -62,7 +61,7 @@ export const AboutComponent: FC<ISection> = ({
             width="400"
             height="400"
             objectFit="cover"
-            alt="main-banner"
+            alt="profile-image"
             quality={100}
           />
 

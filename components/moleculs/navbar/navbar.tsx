@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   Heading,
-  Switch,
   Flex,
   IconButton,
   Drawer,
@@ -16,10 +15,11 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { IoMoon, IoSunny } from 'react-icons/io5';
 import ScrollSpy from 'react-scrollspy-navigation';
 
-import { INavigation } from '@interfaces/inavigation';
 import { useColor } from '@utils/color';
+import { INavigation } from '@interfaces/inavigation';
 
 export interface IProps {
   title: string;
@@ -48,22 +48,23 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
-  const links = menus?.map((menu, index) => (
-    <Link
-      key={index}
-      href={menu.url}
-      aria-label={menu.title}
-      ml="4"
-      p="2"
-      fontWeight="medium"
-      color={isTopPage ? 'inherit' : 'white'}
-      _hover={{ color: navColor }}
-      _focus={{ boxShadow: 'none' }}
-      ref={createRef()}
-    >
-      {menu.title}
-    </Link>
-  ));
+  const links = (isMobile = false) =>
+    menus?.map((menu, index) => (
+      <Link
+        key={index}
+        href={menu.url}
+        aria-label={menu.title}
+        ml="4"
+        p="2"
+        fontWeight="medium"
+        color={isTopPage ? 'inherit' : isMobile ? 'black' : 'white'}
+        _hover={{ color: navColor }}
+        _focus={{ boxShadow: 'none' }}
+        ref={createRef()}
+      >
+        {menu.title}
+      </Link>
+    ));
 
   return (
     <Box
@@ -100,16 +101,20 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
             {/* Desktop */}
             <Box my="6" display={['none', 'none', 'none', 'block']}>
               <ScrollSpy offsetTop={88} duration={1500}>
-                {links}
+                {links()}
               </ScrollSpy>
             </Box>
 
-            <Switch
-              color="teal"
-              isChecked={isDark}
-              onChange={toggleColorMode}
+            <IconButton
+              aria-label="color-mode"
+              size="md"
+              variant="ghost"
+              colorScheme="blue"
+              color={isTopPage ? navColor : 'white'}
+              icon={isDark ? <IoSunny /> : <IoMoon />}
+              onClick={toggleColorMode}
               alignSelf="center"
-              ml="8"
+              ml="4"
             />
 
             {/* Mobile */}
@@ -131,7 +136,7 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
               <DrawerBody>
                 <Flex flexDir="column" align="center" mt="20">
                   <ScrollSpy offsetTop={88} duration={1500}>
-                    {links}
+                    {links(true)}
                   </ScrollSpy>
                 </Flex>
               </DrawerBody>

@@ -16,7 +16,7 @@ export const ProjectsComponent: FC<ISection> = ({ name, title, image }) => {
             borderWidth="1px"
             borderRadius="md"
             overflow="hidden"
-            shadow="sm"
+            shadow="md"
             h="350"
             position="relative"
             cursor="pointer"
