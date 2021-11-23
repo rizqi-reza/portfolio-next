@@ -26,6 +26,7 @@ export const SectionComponent: FC<IProps> = ({
       pb={16}
       sx={{ minHeight: isFullHeight && 'calc(100vh - 188px)' }}
       colorScheme={background}
+      wordBreak="break-word"
     >
       {children}
     </Container>

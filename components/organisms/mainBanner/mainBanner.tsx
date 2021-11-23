@@ -69,9 +69,10 @@ export const MainBannerComponent: FC<ISection> = ({
             target="_blank"
             variant="solid"
             size="md"
-            colorScheme="teal"
+            colorScheme="blue"
             mt="24"
             zIndex="overlay"
+            rel="noreferrer"
           >
             Download Resume
           </Button>

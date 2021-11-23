@@ -19,8 +19,8 @@ export const FooterComponent: FC = () => {
   };
 
   return (
-    <Box my="8">
-      <Text textAlign="center" casing="capitalize">
+    <Box my="4" p="4">
+      <Text textAlign="center" casing="capitalize" fontSize={[12, 14]}>
         &copy; copyright Rizqi Reza Valhevi. design and developed by{' '}
         <Link href="https://github.com/rizqi-reza" target="_blank" aria-label="github-link">
           rizqi-reza

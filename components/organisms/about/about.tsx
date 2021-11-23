@@ -35,47 +35,49 @@ export const AboutComponent: FC<ISection> = ({
 
   return (
     <Section id={name} title={title}>
-      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing="100">
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing="50">
         <Box>
-          <Heading as="h3" size="sm" mb="4" fontWeight="500" lineHeight={1.8}>
+          <Heading as="h2" size="sm" mb="4" fontWeight="500" lineHeight={1.8}>
             {heading}
           </Heading>
           <Text lineHeight={1.8}>{description}</Text>
           <Divider mt="8" mb="8" />
-          <Stack justifyContent="space-between" direction="row">
+          <Stack justifyContent="space-between" direction={['column', 'row']}>
             {subSections?.map((sub) => (
               <Stack key={sub.title} textAlign="left">
-                <Heading as="h4" size="sm">
+                <Heading as="h3" size="sm">
                   {sub.title}
                 </Heading>
-                <Text color={subTextColor} lineHeight={1.8}>
+                <Text color={subTextColor} lineHeight={1.8} fontSize="sm">
                   {sub.description}
                 </Text>
               </Stack>
             ))}
           </Stack>
         </Box>
-        <HStack bg={primaryColor}>
-          <Image
-            src={profileImage}
-            width="400"
-            height="400"
-            objectFit="cover"
-            alt="profile-image"
-            quality={100}
-          />
+        <HStack bg={primaryColor} minHeight="300px">
+          <Box position="relative" height="100%" width="100%">
+            <Image
+              src={profileImage}
+              layout="fill"
+              objectFit="cover"
+              alt="profile-image"
+              quality={100}
+            />
+          </Box>
 
-          <VStack spacing="4" pl="14">
+          <VStack spacing="4" width="100px">
             {socialLinks?.map((item: ISocialLink, index: number) => (
               <IconButton
                 as="a"
                 href={item.url}
                 target="_blank"
-                variant="outline"
+                variant="ghost"
                 aria-label={item.name}
                 fontSize="20px"
                 icon={getLogo(item.name)}
                 key={`about-social-${index}`}
+                rel="noreferrer"
               />
             ))}
           </VStack>

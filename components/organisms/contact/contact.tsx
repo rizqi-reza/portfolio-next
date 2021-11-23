@@ -36,7 +36,7 @@ export const ContactComponent: FC<ISection> = ({
 
   return (
     <Section id={name} title={title} isFullHeight={false}>
-      <SimpleGrid columns={2} spacing="10" justifyContent="center">
+      <SimpleGrid columns={{ md: 2, sm: 1 }} spacing="10" justifyContent="center">
         <Box>
           <Formik
             initialValues={{ name: '', email: '', subject: '', message: '' }}
@@ -138,7 +138,7 @@ export const ContactComponent: FC<ISection> = ({
         </Box>
         <Box>
           <VStack alignItems="flex-start">
-            <Box mb="12">
+            <Box mb="8">
               <Heading as="h2" size="md" mb="2">
                 {heading}
               </Heading>
@@ -169,7 +169,13 @@ export const ContactComponent: FC<ISection> = ({
             <Box>
               <HStack spacing="4">
                 {socialLinks?.map((item: ISocialLink, index: number) => (
-                  <Link key={`contact-social-${index}`} href={item.url} target="_blank">
+                  <Link
+                    key={`contact-social-${index}`}
+                    href={item.url}
+                    target="_blank"
+                    aria-label={item.name}
+                    rel="noreferrer"
+                  >
                     {getLogo(item.name, 'dark')}
                   </Link>
                 ))}

@@ -77,7 +77,7 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
       transitionDuration="0.3s"
       transitionTimingFunction="linear"
     >
-      <Container maxW="container.xl" p={2}>
+      <Container maxW="container.xl" p={4}>
         <Flex align="center" justify="space-between" wrap="wrap">
           <Heading
             as="h2"
@@ -99,7 +99,7 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
             }}
           >
             {/* Desktop */}
-            <Box my="6" display={['none', 'none', 'none', 'block']}>
+            <Box my="4" display={['none', 'none', 'none', 'block']}>
               <ScrollSpy offsetTop={88} duration={1500}>
                 {links()}
               </ScrollSpy>

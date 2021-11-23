@@ -11,7 +11,7 @@ export const SkillsComponent: FC<ISection> = ({ name, title, subSections }) => {
 
   return (
     <Section id={name} title={title}>
-      <SimpleGrid columns={4} spacing="10">
+      <SimpleGrid columns={{ lg: 4, md: 2, sm: 1 }} spacing="10">
         {subSections?.map((item: ISubSection, index: number) => (
           <Box
             key={index}
@@ -22,9 +22,14 @@ export const SkillsComponent: FC<ISection> = ({ name, title, subSections }) => {
             textAlign="center"
             p="4"
           >
-            <Box h="150">
-              <Image src={item.url} alt={item.title} width="100%" />
-            </Box>
+            <Image
+              src={item.url}
+              alt={item.title}
+              width="100%"
+              maxHeight="100"
+              objectFit="contain"
+              mb="2"
+            />
             <Text fontSize="lg" mb="2" color={subTextColor}>
               {item.title}
             </Text>

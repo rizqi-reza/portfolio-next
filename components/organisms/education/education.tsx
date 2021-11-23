@@ -14,7 +14,7 @@ export const EducationComponent: FC<ISection> = ({ name, title, subSections }) =
 
   return (
     <Section id={name} title={title}>
-      <SimpleGrid columns={totalColumn} spacing="2.5">
+      <SimpleGrid columns={{ lg: totalColumn, md: 2, sm: 1 }} spacing="2.5">
         {subSections?.map((item: ISubSection, index: number) => (
           <VStack spacing="4" align="left" key={`${item.title}-${index}`}>
             <Text as="h2" fontSize="md" fontWeight="medium">

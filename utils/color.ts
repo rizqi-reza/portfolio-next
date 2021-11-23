@@ -6,5 +6,5 @@ export const useColor = () => {
 
   return isDark
     ? { navColor: 'white', primaryColor: 'blue.700', subTextColor: 'gray.300' }
-    : { navColor: 'blue.700', primaryColor: 'blue.700', subTextColor: 'gray.500' };
+    : { navColor: 'blue.700', primaryColor: 'blue.700', subTextColor: 'gray.600' };
 };
