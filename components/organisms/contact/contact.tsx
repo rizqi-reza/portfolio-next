@@ -128,7 +128,13 @@ export const ContactComponent: FC<ISection> = ({
                       </FormControl>
                     )}
                   </Field>
-                  <Button colorScheme="blue" type="submit" isLoading={isSubmitting} width="100%">
+                  <Button
+                    colorScheme="blue"
+                    type="submit"
+                    isLoading={isSubmitting}
+                    width="100%"
+                    variant="solid"
+                  >
                     Submit
                   </Button>
                 </VStack>
