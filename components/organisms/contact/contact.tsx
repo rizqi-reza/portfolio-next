@@ -71,7 +71,7 @@ export const ContactComponent: FC<ISection> = ({
 
               promise
                 .then(() => {
-                  emailjs.send('gmail', templateID, templateParams, userID);
+                  emailjs.send('service_jdj8qw1', templateID, templateParams, userID);
                   resetForm();
                   setSubmitting(false);
                   toast({
