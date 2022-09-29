@@ -19,6 +19,7 @@ export const MainBannerComponent: FC<ISection> = ({
     <section id={name} key={name}>
       <Box
         height="100vh"
+        width="100%"
         position="relative"
         zIndex="banner"
         _before={{

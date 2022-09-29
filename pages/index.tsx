@@ -39,7 +39,7 @@ const MainPage: NextPage<IPage> = ({ title, description, navigationMenus, sectio
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://api.npoint.io/20fb878cd3fc2b685b9b');
+  const res = await fetch('https://api.npoint.io/fac4c9c3dbc85d834ebc');
   const pageData = await res.json();
 
   return { props: { ...pageData } };

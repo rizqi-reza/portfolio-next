@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { ISection, ISubSection } from '@interfaces/isection';
-import { Divider, Text, VStack, Flex } from '@chakra-ui/react';
-import { Icon } from '@chakra-ui/react';
+import { Divider, Text, VStack, Flex, Image, Icon } from '@chakra-ui/react';
 import { IoEllipse } from 'react-icons/io5';
 
 import { Section } from 'components';
@@ -16,7 +15,7 @@ export const ExperienceComponent: FC<ISection> = ({ name, title, subSections }) 
       <Text as="h2" fontSize="md" fontWeight="medium">
         {item.title}
       </Text>
-      <Text as="h3" fontSize="sm" fontWeight="medium" color={subTextColor} casing="uppercase">
+      <Text as="h3" fontSize="sm" fontWeight="bold" color={subTextColor} casing="uppercase">
         {item.subTitle}
       </Text>
     </VStack>
@@ -24,7 +23,16 @@ export const ExperienceComponent: FC<ISection> = ({ name, title, subSections }) 
 
   const getJobInfo = (item: ISubSection, align: 'start' | 'end') => (
     <VStack align={align} w="100%" mb="12">
-      <Text as="h4" fontSize="md" casing="uppercase">
+      <Image
+        src={item.url}
+        alt={item.heading}
+        width="100%"
+        maxHeight="50"
+        objectFit="contain"
+        objectPosition={align === 'start' ? 'left' : 'right'}
+        mb="2"
+      />
+      <Text as="h4" fontSize="md" casing="uppercase" fontWeight="bold">
         {item.heading}
       </Text>
       <Text as="h5" fontSize="sm" color={subTextColor}>
