@@ -25,7 +25,7 @@ export const FooterComponent: FC = () => {
         <Link
           href="https://github.com/rizqi-reza"
           target="_blank"
-          aria-label="github-link"
+          aria-label="rizqi-reza"
           rel="noreferrer"
         >
           rizqi-reza
