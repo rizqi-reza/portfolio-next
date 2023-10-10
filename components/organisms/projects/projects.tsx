@@ -9,7 +9,7 @@ import { IImage } from '@interfaces/iimage';
 export const ProjectsComponent: FC<ISection> = ({ name, title, image }) => {
   return (
     <Section id={name} title={title}>
-      <SimpleGrid columns={{ md: 2, sm: 1 }} spacing="8">
+      <SimpleGrid columns={{ md: 3, sm: 1 }} spacing="8">
         {image?.map((item: IImage, index: number) => (
           <Box
             key={index}
@@ -38,6 +38,8 @@ export const ProjectsComponent: FC<ISection> = ({ name, title, image }) => {
             <Flex
               className="overlay-info"
               position="absolute"
+              padding={8}
+              textAlign="center"
               left="0"
               right="0"
               top="0"

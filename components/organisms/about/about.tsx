@@ -78,6 +78,9 @@ export const AboutComponent: FC<ISection> = ({
                 icon={getLogo(item.name)}
                 key={`about-social-${index}`}
                 rel="noreferrer"
+                _hover={{
+                  backgroundColor: 'black',
+                }}
               />
             ))}
           </VStack>

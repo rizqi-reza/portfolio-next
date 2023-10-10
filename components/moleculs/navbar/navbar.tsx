@@ -115,6 +115,9 @@ export const NavbarComponent: FC<IProps> = ({ title, menus }) => {
               onClick={toggleColorMode}
               alignSelf="center"
               ml="4"
+              _hover={{
+                backgroundColor: 'black',
+              }}
             />
 
             {/* Mobile */}
