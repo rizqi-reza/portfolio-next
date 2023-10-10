@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 
 import {
   Navbar,
@@ -31,6 +32,7 @@ const MainPage: NextPage<IPage> = ({ title, navigationMenus, sections }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Analytics />
       <Navbar title={title} menus={navigationMenus} />
       <MainBanner {...sections?.[0]} />
       <About {...sections?.[1]} />
