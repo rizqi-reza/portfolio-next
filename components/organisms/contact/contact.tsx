@@ -23,6 +23,7 @@ import { Section } from 'components';
 import { getLogo } from '@utils/logo';
 import { ISection, ISubSection } from '@interfaces/isection';
 import { ISocialLink } from '@interfaces/ilink';
+import { useColor } from '@utils/color';
 
 export const ContactComponent: FC<ISection> = ({
   name,
@@ -33,6 +34,7 @@ export const ContactComponent: FC<ISection> = ({
   socialLinks,
 }) => {
   const toast = useToast();
+  const { primaryColor } = useColor();
 
   return (
     <Section id={name} title={title} isFullHeight={false}>
@@ -129,11 +131,15 @@ export const ContactComponent: FC<ISection> = ({
                     )}
                   </Field>
                   <Button
-                    colorScheme="blue"
+                    backgroundColor={primaryColor}
+                    color="white"
                     type="submit"
                     isLoading={isSubmitting}
                     width="100%"
                     variant="solid"
+                    _hover={{
+                      backgroundColor: 'black',
+                    }}
                   >
                     Submit
                   </Button>
@@ -160,11 +166,11 @@ export const ContactComponent: FC<ISection> = ({
                     {item.title.toLowerCase() === 'address' ? (
                       <span>{item.description}</span>
                     ) : item.title.toLowerCase() === 'website' ? (
-                      <Link href={item.description} aria-label={`${item.title}-link`}>
+                      <Link href={item.description} aria-label={item.description}>
                         {item.description}
                       </Link>
                     ) : (
-                      <Link href={`mailto:${item.description}`} aria-label={`${item.title}-link`}>
+                      <Link href={`mailto:${item.description}`} aria-label={item.description}>
                         {item.description}
                       </Link>
                     )}
