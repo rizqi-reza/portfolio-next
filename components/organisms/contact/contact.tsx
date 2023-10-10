@@ -99,7 +99,7 @@ export const ContactComponent: FC<ISection> = ({
                       {({ field, form }) => (
                         <FormControl isInvalid={form.errors.name && form.touched.name} isRequired>
                           <FormLabel htmlFor="name">Name</FormLabel>
-                          <Input {...field} id="name" placeholder="Name" autoComplete />
+                          <Input {...field} id="name" placeholder="Name" autoComplete="name" />
                           <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                         </FormControl>
                       )}
@@ -108,7 +108,7 @@ export const ContactComponent: FC<ISection> = ({
                       {({ field, form }) => (
                         <FormControl isInvalid={form.errors.email && form.touched.email} isRequired>
                           <FormLabel htmlFor="email">Email</FormLabel>
-                          <Input {...field} id="email" placeholder="Email" autoComplete />
+                          <Input {...field} id="email" placeholder="Email" autoComplete="email" />
                           <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                         </FormControl>
                       )}
@@ -118,7 +118,7 @@ export const ContactComponent: FC<ISection> = ({
                     {({ field, form }) => (
                       <FormControl>
                         <FormLabel htmlFor="subject">Subject</FormLabel>
-                        <Input {...field} id="subject" placeholder="Subject" autoComplete />
+                        <Input {...field} id="subject" placeholder="Subject" />
                       </FormControl>
                     )}
                   </Field>
@@ -126,7 +126,7 @@ export const ContactComponent: FC<ISection> = ({
                     {({ field, form }) => (
                       <FormControl>
                         <FormLabel htmlFor="message">Message</FormLabel>
-                        <Textarea {...field} id="message" placeholder="Message" autoComplete />
+                        <Textarea {...field} id="message" placeholder="Message" />
                       </FormControl>
                     )}
                   </Field>
